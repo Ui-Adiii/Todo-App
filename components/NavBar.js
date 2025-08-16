@@ -33,7 +33,7 @@ const NavBar = () => {
                   </button>
                   <button className="flex items-center space-x-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200 shadow-sm hover:shadow-md">
                     <LogIn className="w-4 h-4" />
-                    <Link href="login">Login</Link>
+                    <Link href="/login">Login</Link>
                   </button>
                 </div>
               )}
