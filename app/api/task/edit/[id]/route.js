@@ -2,7 +2,7 @@ import Todo from "@/models/todo.model";
 import { NextResponse } from "next/server";
 
 export async function PATCH(req,{params}) {
-    const { id } = params;
+    const { id } = await params;
 
     try {
         const body = await req.json();

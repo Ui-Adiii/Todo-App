@@ -68,17 +68,17 @@ const ShowTodo = ({ todo, index }) => {
             </span>
           </div>
 
-          <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="flex items-center space-x-2 ">
             <button
               onClick={() => setOpen(true)}
-              className="p-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200"
+              className="p-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg"
             >
               <Edit3 className="w-4 h-4" />
             </button>
 
             <button
               onClick={() => handleDelete(todo._id)}
-              className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all duration-200"
+              className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg"
             >
               <Trash2 className="w-4 h-4" />
             </button>
