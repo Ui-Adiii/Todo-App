@@ -42,7 +42,6 @@ export function TodoProvider({ children }) {
       }
     }
   useEffect(() => {
-   
     fetchTodos();
   }, [user])
   

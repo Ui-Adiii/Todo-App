@@ -1,11 +1,9 @@
 "use client";
-import { TodoContext } from "@/context/TodoContext";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 const Register = () => {
-  const {fetchUser}=useContext(TodoContext)
   const router =useRouter();
   const [form, setform] = useState({
     email: "",
@@ -25,7 +23,6 @@ const Register = () => {
       if(response.data.success){
         toast.success(response.data.message);
         setloading(false);
-        fetchUser();
         router.push("/");
       }
       else{

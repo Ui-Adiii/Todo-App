@@ -1,12 +1,10 @@
 "use client";
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import { TodoContext } from "@/context/TodoContext";
 
 const Login = () => {
-  const {fetchUser}=useContext(TodoContext)
   const router = useRouter();
   const [form, setform] = useState({
     email: "",
@@ -24,7 +22,6 @@ const Login = () => {
       const response = await axios.post("/api/user/login", form);
       if (response.data.success) {
         toast.success(response.data.message);
-        fetchUser();
         setloading(false);
         router.push("/");
       } else {
