@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import { TodoContext } from "@/context/TodoContext";
 import ShowTodo from "@/components/ShowTodo";
@@ -11,11 +11,21 @@ import TodoList from "@/components/TodoList";
 
 export default function Home() {
   const { user, todos } = useContext(TodoContext);
+  const [loading, setloading] = useState(true)
   const completedCount = todos.filter((todo) => todo.completed).length;
   const totalCount = todos.length;
+  useEffect(() => {
+    setloading(false);
+  }, [user])
+  
+if (loading) return (
+  <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="w-12 h-12 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+  </div>
+);
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-      <NavBar />
+      <NavBar  />
       {user ? (
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -45,7 +55,7 @@ export default function Home() {
           <TodoList todos={todos} />
         </div>
       ) : (
-        <div className="flex items-center justify-center max-h-screen py-20">
+        <div className="flex items-center justify-center  py-20">
           <h1 className="text-2xl font-medium">Please log in to continue</h1>
         </div>
       )}

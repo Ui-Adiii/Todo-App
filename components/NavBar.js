@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { TodoContext } from '@/context/TodoContext';
 
 const NavBar = () => {
-      const{user}  = useContext(TodoContext)
+  const{user}  = useContext(TodoContext)
   return (
     <>
     <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 shadow-sm sticky top-0 z-10">

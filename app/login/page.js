@@ -25,7 +25,7 @@ const Login = () => {
       if (response.data.success) {
         toast.success(response.data.message);
         setloading(false);
-        fetchUser()
+        await fetchUser()
         router.push("/");
       } else {
         toast.error(response.data.message);

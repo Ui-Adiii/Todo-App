@@ -18,10 +18,10 @@ const AddTodo = () => {
         setTodos((prev) => [...prev, response.data.todo]);
       }
       else{
-        toast.error("Failed to add todo");
+        toast.error(response.data.message);
       }
     } catch (error) {
-      toast.error("Failed to add todo");
+      toast.error(error.message);
     }
   };
 
