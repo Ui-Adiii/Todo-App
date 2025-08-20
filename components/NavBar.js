@@ -3,8 +3,7 @@ import { Check, User, LogIn, UserPlus } from "lucide-react";
 import Link from 'next/link';
 import { TodoContext } from '@/context/TodoContext';
 
-const NavBar = () => {
-  const{user}  = useContext(TodoContext)
+const NavBar = ({user}) => {
   return (
     <>
     <nav className="bg-white/80 backdrop-blur-sm border-b border-white/20 shadow-sm sticky top-0 z-10">
@@ -20,12 +19,13 @@ const NavBar = () => {
             </div>
             
             <div className="flex items-center space-x-3">
-              {user ? (
+              {user !==null && (
                 <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full border border-green-200">
                   <User className="w-4 h-4 text-green-600" />
                   <span className="text-green-700 font-medium">Welcome, {user.name}</span>
                 </div>
-              ) : (
+              )}
+              {user===null && (
                 <div className="flex items-center space-x-2">
                   <button className="flex items-center space-x-1 px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
                     <UserPlus className="w-4 h-4" />
