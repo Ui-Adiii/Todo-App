@@ -45,7 +45,7 @@ export default function Home() {
           <TodoList todos={todos} />
         </div>
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center max-h-screen py-20">
           <h1 className="text-2xl font-medium">Please log in to continue</h1>
         </div>
       )}
