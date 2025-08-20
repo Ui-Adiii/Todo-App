@@ -1,9 +1,10 @@
 "use client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 const Register = () => {
+  const {fetchUser} =useContext(TodoContext)
   const router =useRouter();
   const [form, setform] = useState({
     email: "",

@@ -54,7 +54,7 @@ export async function POST(req) {
       message: "User Created Successfully",
     });
   } catch (error) {
-    Response.json({
+    return NextResponse.json({
       success: false,
       message: error.message,
     });

@@ -49,7 +49,7 @@ export function TodoProvider({ children }) {
 
   return (
     <TodoContext.Provider
-      value={{ todos, user,setTodos,fetchTodos}}
+      value={{ todos, fetchUser,user,setTodos,fetchTodos}}
     >
       {children}
     </TodoContext.Provider>
